@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
+  const [brillo, setBrillo] = useState("");
+
   return (
-    <div className="Semaforo">
-      <div className="rojo">rojo</div>
-      <div className="amarillo">amarillo</div>
-      <div className="verde">verde</div>
+    <div className="semaforo">
+      <div
+        className={brillo === "rojo" ? "brillo rojo" : "rojo"}
+        onClick={() => {
+          setBrillo("rojo");
+        }}
+      ></div>
+      <div
+        className={brillo === "amarillo" ? "brillo amarillo" : "amarillo"}
+        onClick={() => {
+          setBrillo("amarillo");
+        }}
+      ></div>
+      <div
+        className={brillo === "verde" ? "brillo verde" : "verde"}
+        onClick={() => {
+          setBrillo("verde");
+        }}
+      ></div>
     </div>
   );
 };
